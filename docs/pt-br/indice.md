@@ -10,5 +10,5 @@ Bem vindo(a) à documentação da **Iquety Routing**. Aqui você encontra as inf
 ## Conteúdo
 
 - [Como usar](01-como-usar.md)
-- [Injeção de dependência](02-roteador.md)
-- [Injeção de dependência](03-rota.md)
+- [Roteador](02-roteador.md)
+- [Rota](03-rota.md)

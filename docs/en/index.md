@@ -10,5 +10,5 @@ Welcome to the **Iquety Routing** documentation. Here you will find the necessar
 ## Contents
 
 - [How to use](01-how-to-use.md)
-- [Dependency Injection](02-router.md)
-- [Dependency Injection](03-route.md)
+- [Router](02-router.md)
+- [Route](03-route.md)

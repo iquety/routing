@@ -5,7 +5,7 @@
 
 ## Sinopse
 
-**Iquety Routing** é um biblioteca para manipular rotas baseadas em URL, com suporte a contextos delimitados.
+**Iquety Routing** é um biblioteca para manipular rotas baseadas em URI, com suporte a contextos delimitados.
 
 ```bash
 composer require iquety/routing

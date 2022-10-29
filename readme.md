@@ -10,7 +10,7 @@
 
 ## Synopsis
 
-**Iquety Routing** is a library for handling URL-based routes, supporting delimited contexts.
+**Iquety Routing** is a library for handling URI-based routes, supporting delimited contexts.
 
 ```bash
 composer require iquety/routing

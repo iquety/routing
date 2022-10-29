@@ -1,4 +1,4 @@
-# Iquety Injection
+# Iquety Routing
 
 [English](../../readme.md) | [Português](leiame.md)
 -- | --

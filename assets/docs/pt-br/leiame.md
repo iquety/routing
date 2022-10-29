@@ -1,34 +1,15 @@
-# Freep Application
-
-![PHP Version](https://img.shields.io/badge/php-%5E8.0-blue)
-![License](https://img.shields.io/badge/license-MIT-blue)
-[![Codacy Badge](https://app.codacy.com/project/badge/Coverage/5a911e53f0cc421282d847d323f50203)](https://www.codacy.com/gh/ricardopedias/freep-console/dashboard?utm_source=github.com&utm_medium=referral&utm_content=ricardopedias/freep-console&utm_campaign=Badge_Coverage)
-[![Codacy Badge](https://app.codacy.com/project/badge/Grade/5a911e53f0cc421282d847d323f50203)](https://www.codacy.com/gh/ricardopedias/freep-console/dashboard?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=ricardopedias/freep-console&amp;utm_campaign=Badge_Grade)
+# Iquety Injection
 
 [English](../../readme.md) | [Português](leiame.md)
 -- | --
 
 ## Sinopse
 
-O **Freep Aplication** é uma biblioteca para a criação de aplicações modulares usando 
-padrões arquiteturais MVC e Hexagonal (Ports and Adapters).
+**Iquety Routing** é um biblioteca para manipular rotas baseadas em URL, com suporte a contextos delimitados.
 
 ```bash
-composer require ricardopedias/freep-application
+composer require iquety/routing
 ```
-
-### Aplicação
-
-* Proporciona a separação de interesses, usando módulos bootáveis;
-* Baseada no padrão arquitetural MVC;
-* Dependências extremamente flexíveis, usando arquitetura Hexagonal (Ports and Adapters).
-
-### Módulo
-
-- Pode definir suas próprias rotas;
-- Pode definir suas próprias dependências;
-- Suas dependências são fabricadas apenas se uma rota do módulo for acessada;
-- Carrega Controladores e Policies usando o padrão de Inversão de Controle.
 
 Para informações detalhadas, consulte o [Sumário da Documentação](indice.md).
 

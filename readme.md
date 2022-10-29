@@ -1,4 +1,4 @@
-# Iquety Application
+# Iquety Routing
 
 ![PHP Version](https://img.shields.io/badge/php-%5E8.0-blue)
 ![License](https://img.shields.io/badge/license-MIT-blue)
@@ -10,24 +10,11 @@
 
 ## Synopsis
 
-**Freep Application** is a library for creating modular applications using MVC and Hexagonal (Ports and Adapters) architectural patterns.
+**Iquety Routing** is a library for handling URL-based routes, supporting delimited contexts.
 
 ```bash
-composer require ricardopedias/freep-application
+composer require iquety/routing
 ```
-
-### Application
-
-* Provides separation of concerns (SOC), using bootable modules;
-* Based on the MVC architectural pattern;
-* Extremely flexible dependencies, using Hexagonal architecture (Ports and Adapters).
-
-### Module
-
-- Can define your own routes;
-- Can define your own dependencies;
-- Its dependencies are fabricated only if a module route is accessed;
-- Loads Controllers and Policies using the Inversion of Control pattern.
 
 For detailed information, see [Documentation Summary](docs/en/index.md).
 

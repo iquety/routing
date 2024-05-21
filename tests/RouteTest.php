@@ -4,12 +4,29 @@ declare(strict_types=1);
 
 namespace Tests\Routing;
 
-use Iquety\Routing\Policy;
 use Iquety\Routing\Route;
 use Tests\TestCase;
 
 class RouteTest extends TestCase
 {
+    /** @test */
+    public function defaultAction(): void
+    {
+        $route = (new Route())
+            ->usingAction('UserController');
+
+        $this->assertSame('UserController::execute', $route->action());
+    }
+
+    /** @test */
+    public function customAction(): void
+    {
+        $route = (new Route())
+            ->usingAction('UserController', 'run');
+
+        $this->assertSame('UserController::run', $route->action());
+    }
+
     /** @test */
     public function settersGetters(): void
     {
@@ -22,7 +39,7 @@ class RouteTest extends TestCase
         $this->assertSame('UserBootstrap', $route->module());
         $this->assertSame('edit/:id', $route->pattern());
         $this->assertSame(Route::ANY, $route->method());
-        $this->assertSame('UserController', $route->action());
+        $this->assertSame('UserController::execute', $route->action());
         $this->assertSame([], $route->params());
     }
 
@@ -128,7 +145,7 @@ class RouteTest extends TestCase
         $this->assertTrue($route->matchTo(Route::GET, $path));
         $this->assertEquals($params, $route->params());
         $this->assertEquals(Route::GET, $route->method());
-        $this->assertEquals('CtrlTeste', $route->action());
+        $this->assertEquals('CtrlTeste::execute', $route->action());
         $this->assertSame($params, $route->params());
     }
 

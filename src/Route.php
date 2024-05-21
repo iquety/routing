@@ -18,6 +18,8 @@ class Route
 
     private Closure|string $action = '';
 
+    private string $actionRoutine = '';
+
     private string $method = 'GET';
 
     private string $module = '';
@@ -36,9 +38,12 @@ class Route
         return $this;
     }
 
-    public function usingAction(Closure|string $action): Route
+    public function usingAction(Closure|string $className, string $actionName = 'execute'): Route
     {
-        $this->action = $action;
+        $this->action = $className;
+
+        $this->actionRoutine = $actionName;
+
         return $this;
     }
 
@@ -56,7 +61,7 @@ class Route
 
     public function action(): Closure|string
     {
-        return $this->action;
+        return $this->action . '::' . $this->actionRoutine;
     }
 
     public function method(): string

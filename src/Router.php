@@ -112,7 +112,7 @@ class Router
         $route = new Route();
         $route->forModule($this->moduleIdentifier);
         $route->usingPattern($pattern);
-        $route->usingMethod($method);
+        $route->usingRequestMethod($method);
 
         return $route;
     }

@@ -16,11 +16,11 @@ class Route
     public const POST   = 'POST';
     public const PUT    = 'PUT';
 
-    private Closure|string $action = '';
+    private Closure|string $actionClass = '';
 
-    private string $actionRoutine = '';
+    private string $actionMethod = '';
 
-    private string $method = 'GET';
+    private string $requestMethod = 'GET';
 
     private string $module = '';
 
@@ -38,35 +38,42 @@ class Route
         return $this;
     }
 
-    public function usingAction(Closure|string $className, string $actionName = 'execute'): Route
+    public function usingAction(Closure|string $className, string $method = 'execute'): Route
     {
-        $this->action = $className;
+        $this->actionClass = $className;
 
-        $this->actionRoutine = $actionName;
+        $this->actionMethod = $method;
 
         return $this;
     }
 
-    public function usingMethod(string $method): Route
+    public function usingRequestMethod(string $method): Route
     {
-        $this->method = strtoupper($method);
+        $this->requestMethod = mb_strtoupper($method);
+
         return $this;
     }
 
     public function usingPattern(string $pattern): Route
     {
         $this->pattern = trim($pattern, "/");
+
         return $this;
     }
 
     public function action(): Closure|string
     {
-        return $this->action . '::' . $this->actionRoutine;
+        return $this->actionClass;
     }
 
-    public function method(): string
+    public function actionMethod(): Closure|string
     {
-        return $this->method;
+        return $this->actionMethod;
+    }
+
+    public function requestMethod(): string
+    {
+        return $this->requestMethod;
     }
 
     public function module(): string
@@ -87,7 +94,7 @@ class Route
 
     public function matchTo(string $method, string $requestPath): bool
     {
-        if ($this->method() !== Route::ANY && strtoupper($method) !== $this->method()) {
+        if ($this->requestMethod() !== Route::ANY && mb_strtoupper($method) !== $this->requestMethod()) {
             return false;
         }
 

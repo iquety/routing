@@ -15,7 +15,8 @@ class RouteTest extends TestCase
         $route = (new Route())
             ->usingAction('UserController');
 
-        $this->assertSame('UserController::execute', $route->action());
+        $this->assertSame('UserController', $route->action());
+        $this->assertSame('execute', $route->actionMethod());
     }
 
     /** @test */
@@ -24,7 +25,8 @@ class RouteTest extends TestCase
         $route = (new Route())
             ->usingAction('UserController', 'run');
 
-        $this->assertSame('UserController::run', $route->action());
+        $this->assertSame('UserController', $route->action());
+        $this->assertSame('run', $route->actionMethod());
     }
 
     /** @test */
@@ -33,13 +35,14 @@ class RouteTest extends TestCase
         $route = (new Route())
             ->forModule('UserBootstrap')
             ->usingPattern('edit/:id')
-            ->usingMethod(Route::ANY)
+            ->usingRequestMethod(Route::ANY)
             ->usingAction('UserController');
 
         $this->assertSame('UserBootstrap', $route->module());
         $this->assertSame('edit/:id', $route->pattern());
-        $this->assertSame(Route::ANY, $route->method());
-        $this->assertSame('UserController::execute', $route->action());
+        $this->assertSame(Route::ANY, $route->requestMethod());
+        $this->assertSame('UserController', $route->action());
+        $this->assertSame('execute', $route->actionMethod());
         $this->assertSame([], $route->params());
     }
 
@@ -139,13 +142,14 @@ class RouteTest extends TestCase
     {
         $route = new Route();
         $route->usingPattern($pattern);
-        $route->usingMethod(Route::GET);
+        $route->usingRequestMethod(Route::GET);
         $route->usingAction('CtrlTeste');
 
         $this->assertTrue($route->matchTo(Route::GET, $path));
         $this->assertEquals($params, $route->params());
-        $this->assertEquals(Route::GET, $route->method());
-        $this->assertEquals('CtrlTeste::execute', $route->action());
+        $this->assertEquals(Route::GET, $route->requestMethod());
+        $this->assertEquals('CtrlTeste', $route->action());
+        $this->assertEquals('execute', $route->actionMethod());
         $this->assertSame($params, $route->params());
     }
 
@@ -154,7 +158,7 @@ class RouteTest extends TestCase
     {
         $route = new Route();
         $route->usingPattern('edit/:id');
-        $route->usingMethod(Route::ANY);
+        $route->usingRequestMethod(Route::ANY);
         $route->usingAction(fn() => true);
 
         $this->assertTrue($route->matchTo(Route::GET, 'edit/33')); // valor calculado
@@ -184,7 +188,7 @@ class RouteTest extends TestCase
     {
         $route = new Route();
         $route->usingPattern($pattern);
-        $route->usingMethod(Route::ANY);
+        $route->usingRequestMethod(Route::ANY);
 
         $this->assertFalse($route->matchTo(Route::GET, $path));
     }

@@ -66,7 +66,7 @@ class Route
         return $this->actionClass;
     }
 
-    public function actionMethod(): Closure|string
+    public function actionMethod(): string
     {
         return $this->actionMethod;
     }

@@ -4,10 +4,8 @@ declare(strict_types=1);
 
 namespace Tests\Routing;
 
-use Iquety\Routing\Policy;
 use Iquety\Routing\Route;
 use Iquety\Routing\Router;
-use RuntimeException;
 use Tests\TestCase;
 
 class RouterTest extends TestCase

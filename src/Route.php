@@ -38,7 +38,7 @@ class Route
         return $this;
     }
 
-    public function usingAction(Closure|string $className, string $method = 'execute'): Route
+    public function usingAction(Closure|string $className, string $method = ''): Route
     {
         $this->actionClass = $className;
 

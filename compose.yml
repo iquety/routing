@@ -1,7 +1,7 @@
 services:
 
   php:
-    image: ricardopedias/docker-project:php80
+    image: ricardopedias/docker-project:php83
     container_name: iquety-routing
     volumes:
       - .:/application

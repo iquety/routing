@@ -1,6 +1,6 @@
 # Índice da documentação
 
-[◂ Voltar para o leiame](leiame.md) | [Como usar ▸](01-como-usar.md)
+[◂ Voltar para o leiame](leiame.md) | [Como usar o roteador ▸](01-roteador.md)
 -- | --
 
 ## Introdução
@@ -9,6 +9,6 @@ Bem vindo(a) à documentação da **Iquety Routing**. Aqui você encontra as inf
 
 ## Conteúdo
 
-- [Como usar](01-como-usar.md)
-- [Roteador](02-roteador.md)
-- [Rota](03-rota.md)
+- [Como usar o roteador](01-roteador.md)
+- [Configurando rotas](02-rota.md)
+- [Evoluindo a biblioteca](99-evoluindo.md)

@@ -26,7 +26,7 @@ são fluentes e retornam um objeto `Route`, que é usado para passar configuraç
 
 ## 2. Definindo a rotina de ação
 
-A rotina a ser executada, quando a rota bater com a solicitação do usuário, é 
+A rotina a ser executada, quando a rota bater com a solicitação do usuário, é
 definida com o método `usingAction`:
 
 ```php

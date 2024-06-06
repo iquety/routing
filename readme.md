@@ -1,5 +1,6 @@
 # Iquety Routing
 
+[![GitHub Release](https://img.shields.io/github/release/iquety/routing.svg)](https://github.com/iquety/routing/releases/latest)
 ![PHP Version](https://img.shields.io/badge/php-%5E8.3-blue)
 ![License](https://img.shields.io/badge/license-MIT-blue)
 [![Codacy Grade](https://app.codacy.com/project/badge/Grade/c1423232fb8a47a3b0a895ecb5c81c9e)](https://www.codacy.com/gh/iquety/routing/dashboard?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=iquety/routing&amp;utm_campaign=Badge_Grade)

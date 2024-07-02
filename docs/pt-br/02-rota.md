@@ -1,6 +1,6 @@
 # Configurando rotas
 
-[◂ Como usar o roteador](01-roteador.md) | [Índice da documentação](indice.md) | [Evoluindo a biblioteca ▸](99-evoluindo.md)
+[◂ Como usar o roteador](01-roteador.md) | [Índice da documentação](indice.md) | [Evoluindo a biblioteca ▸](99-evoluindo-a-biblioteca.md)
 -- | -- | --
 
 ## 1. Mapeando rotas
@@ -65,5 +65,5 @@ $router->any('...')
     ->forModule('identificação do meu módulo');
 ```
 
-[◂ Como usar o roteador](01-roteador.md) | [Índice da documentação](indice.md) | [Evoluindo a biblioteca ▸](99-evoluindo.md)
+[◂ Como usar o roteador](01-roteador.md) | [Índice da documentação](indice.md) | [Evoluindo a biblioteca ▸](99-evoluindo-a-biblioteca.md)
 -- | -- | --

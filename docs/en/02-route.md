@@ -1,6 +1,6 @@
 # Configuring routes
 
-[◂ How to use the router](01-router.md) | [Documentation index](index.md) | [Evolving the library ▸](99-evolution.md)
+[◂ How to use the router](01-router.md) | [Documentation index](index.md) | [Evolving the library ▸](99-improving-the-library.md)
 -- | -- | --
 
 ## 1. Mapping routes
@@ -65,5 +65,5 @@ $router->any('...')
     ->forModule('identificação do meu módulo');
 ```
 
-[◂ How to use the router](01-router.md) | [Documentation index](index.md) | [Evolving the library ▸](99-evolution.md)
+[◂ How to use the router](01-router.md) | [Documentation index](index.md) | [Evolving the library ▸](99-improving-the-library.md)
 -- | -- | --

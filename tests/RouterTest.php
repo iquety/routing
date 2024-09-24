@@ -84,6 +84,7 @@ class RouterTest extends TestCase
 
         foreach ($listMethods as $method) {
             $data[] = [ $method, '/', "/" ];
+            $data[] = [ $method, '', "" ];
             $data[] = [ $method, 'edit/:id', "edit/33" ];
             $data[] = [ $method, 'show/:name', "show/ricardo" ];
         }

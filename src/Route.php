@@ -100,9 +100,9 @@ class Route
 
         $requestPath = trim($requestPath, "/");
 
-        $this->nodes = $requestPath === '' ? [] : explode("/", $requestPath);
+        $this->nodes = $requestPath === '' ? [] : array_filter(explode("/", $requestPath));
 
-        $segments = explode("/", $this->pattern);
+        $segments = array_filter(explode("/", $this->pattern));
 
         if (count($segments) !== count($this->nodes)) {
             return false;

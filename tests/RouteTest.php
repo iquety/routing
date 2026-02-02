@@ -46,7 +46,7 @@ class RouteTest extends TestCase
         $this->assertSame([], $route->params());
     }
 
-    /** @return array<int, array> */
+    /** @return array<int,array<int,mixed>> */
     public function routesProvider(): array
     {
         $data = [];
@@ -165,7 +165,7 @@ class RouteTest extends TestCase
         $this->assertEquals([ 'id' => '33' ], $route->params());
     }
 
-    /** @return array<int, array> */
+    /** @return array<int,array<int,string>> */
     public function routesNotFoundProvider(): array
     {
         return [

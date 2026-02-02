@@ -10,7 +10,7 @@ use Tests\TestCase;
 
 class RouterTest extends TestCase
 {
-    /** @return array<int, array>) */
+    /** @return array<int,array<int,string>> */
     public function routesNotMatchProvider(): array
     {
         $data = [];
@@ -68,7 +68,7 @@ class RouterTest extends TestCase
         $this->assertNull($router->currentRoute());
     }
 
-    /** @return array<int, array>) */
+    /** @return array<int,array<int,string>> */
     public function routesMatchProvider(): array
     {
         $data = [];
@@ -141,10 +141,10 @@ class RouterTest extends TestCase
 
         $router->process(ROUTE::GET, '/user/ricardo');
         $this->assertInstanceOf(Route::class, $router->currentRoute());
-        $this->assertEquals('all', $router->currentRoute()?->module());
+        $this->assertEquals('all', $router->currentRoute()->module());
 
         $router->process(ROUTE::GET, '/post/33');
         $this->assertInstanceOf(Route::class, $router->currentRoute());
-        $this->assertEquals('module_identifier', $router->currentRoute()?->module());
+        $this->assertEquals('module_identifier', $router->currentRoute()->module());
     }
 }

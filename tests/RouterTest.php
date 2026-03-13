@@ -6,7 +6,6 @@ namespace Tests;
 
 use Iquety\Routing\Route;
 use Iquety\Routing\Router;
-use Tests\TestCase;
 
 class RouterTest extends TestCase
 {
@@ -17,14 +16,14 @@ class RouterTest extends TestCase
         $listMethods = [ Route::ANY, Route::GET, Route::POST, Route::PUT, Route::DELETE ];
 
         foreach ($listMethods as $method) {
-            $data[] = [ $method, 'edit/:id', "edit" ]; // tamanho diferente
-            $data[] = [ $method, ':id', "edit/33" ]; // tamanho diferente
+            $data[] = [ $method, 'edit/:id', 'edit' ]; // tamanho diferente
+            $data[] = [ $method, ':id', 'edit/33' ]; // tamanho diferente
 
-            $data[] = [ $method, 'edit/:id', "edit/33/show" ]; // tamanho e padrão diferentes
-            $data[] = [ $method, ':id/edit', "33/edit/show" ]; // tamanho e padrão diferentes
+            $data[] = [ $method, 'edit/:id', 'edit/33/show' ]; // tamanho e padrão diferentes
+            $data[] = [ $method, ':id/edit', '33/edit/show' ]; // tamanho e padrão diferentes
 
-            $data[] = [ $method, 'edit/:id', "edity/33" ]; // padrão diferente
-            $data[] = [ $method, ':id/edit', "33/edity" ]; // padrão diferente
+            $data[] = [ $method, 'edit/:id', 'edity/33' ]; // padrão diferente
+            $data[] = [ $method, ':id/edit', '33/edity' ]; // padrão diferente
         }
 
         return $data;
@@ -83,10 +82,10 @@ class RouterTest extends TestCase
         ];
 
         foreach ($listMethods as $method) {
-            $data[] = [ $method, '/', "/" ];
-            $data[] = [ $method, '', "" ];
-            $data[] = [ $method, 'edit/:id', "edit/33" ];
-            $data[] = [ $method, 'show/:name', "show/ricardo" ];
+            $data[] = [ $method, '/', '/' ];
+            $data[] = [ $method, '', '' ];
+            $data[] = [ $method, 'edit/:id', 'edit/33' ];
+            $data[] = [ $method, 'show/:name', 'show/ricardo' ];
         }
 
         return $data;

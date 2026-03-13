@@ -56,7 +56,7 @@ class Route
 
     public function usingPattern(string $pattern): Route
     {
-        $this->pattern = trim($pattern, "/");
+        $this->pattern = trim($pattern, '/');
 
         return $this;
     }
@@ -98,11 +98,11 @@ class Route
             return false;
         }
 
-        $requestPath = trim($requestPath, "/");
+        $requestPath = trim($requestPath, '/');
 
-        $this->nodes = $requestPath === '' ? [] : array_filter(explode("/", $requestPath));
+        $this->nodes = $requestPath === '' ? [] : array_filter(explode('/', $requestPath));
 
-        $segments = array_filter(explode("/", $this->pattern));
+        $segments = array_filter(explode('/', $this->pattern));
 
         if (count($segments) !== count($this->nodes)) {
             return false;
@@ -111,8 +111,8 @@ class Route
         $allParams = [];
         foreach ($segments as $index => $name) {
             // variável
-            if (str_starts_with($name, ":") === true) {
-                $paramName = trim($name, ":");
+            if (str_starts_with($name, ':') === true) {
+                $paramName = trim($name, ':');
                 $allParams[$paramName] = $this->nodes[$index];
                 continue;
             }

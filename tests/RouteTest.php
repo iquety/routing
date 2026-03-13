@@ -5,7 +5,6 @@ declare(strict_types=1);
 namespace Tests;
 
 use Iquety\Routing\Route;
-use Tests\TestCase;
 
 class RouteTest extends TestCase
 {
@@ -51,82 +50,82 @@ class RouteTest extends TestCase
     {
         $data = [];
 
-        foreach ([ "/:/", "/:_", "_:/", "_:_" ] as $inputs) {
-            $insert = explode(":", $inputs);
-            $start  = $insert[0] === "_" ? "" : $insert[0];
-            $end    = $insert[1] === "_" ? "" : $insert[1];
+        foreach ([ '/:/', '/:_', '_:/', '_:_' ] as $inputs) {
+            $insert = explode(':', $inputs);
+            $start  = $insert[0] === '_' ? '' : $insert[0];
+            $end    = $insert[1] === '_' ? '' : $insert[1];
 
             // sem parametros
             $data[] = [
-                $start . "edit/now" . $end, // pattern
-                "edit/now",                 // path
+                $start . 'edit/now' . $end, // pattern
+                'edit/now',                 // path
                 []                          // result
             ];
             $data[] = [
-                "edit/now",
-                $start . "edit/now" . $end,
+                'edit/now',
+                $start . 'edit/now' . $end,
                 []
             ];
 
             // um parametro (:id)
             $data[] = [
-                $start . "edit/:id" . $end,
-                "edit/now",
-                [ "id" => "now" ]
+                $start . 'edit/:id' . $end,
+                'edit/now',
+                [ 'id' => 'now' ]
             ];
             $data[] = [
-                "edit/:id",
-                $start . "edit/now" . $end,
-                [ "id" => "now" ]
+                'edit/:id',
+                $start . 'edit/now' . $end,
+                [ 'id' => 'now' ]
             ];
 
             $data[] = [
-                $start . ":id/edit" . $end,
-                "now/edit",
-                [ "id" => "now" ]
+                $start . ':id/edit' . $end,
+                'now/edit',
+                [ 'id' => 'now' ]
             ];
             $data[] = [
-                ":id/edit",
-                $start . "now/edit" . $end,
-                [ "id" => "now" ]
+                ':id/edit',
+                $start . 'now/edit' . $end,
+                [ 'id' => 'now' ]
             ];
 
             // dois parametros (:id, :name)
             $data[] = [
-                $start . ":id/:name" . $end,
-                "5/ricardo",
-                [ "id" => "5", "name" => "ricardo" ]
+                $start . ':id/:name' . $end,
+                '5/ricardo',
+                [ 'id' => '5', 'name' => 'ricardo' ]
             ];
             $data[] = [
-                $start . "edit/:id/:name" . $end,
-                "edit/5/ricardo",
-                [ "id" => "5", "name" => "ricardo" ]
+                $start . 'edit/:id/:name' . $end,
+                'edit/5/ricardo',
+                [ 'id' => '5', 'name' => 'ricardo' ]
             ];
             $data[] = [
-                "edit/:id/:name",
-                $start . "edit/5/ricardo" . $end,
-                [ "id" => "5", "name" => "ricardo" ]
+                'edit/:id/:name',
+                $start . 'edit/5/ricardo' . $end,
+                [ 'id' => '5', 'name' => 'ricardo' ]
             ];
 
             $data[] = [
-                $start . ":id/edit/:name" . $end,
-                "5/edit/ricardo",
-                [ "id" => "5", "name" => "ricardo" ]
+                $start . ':id/edit/:name' . $end,
+                '5/edit/ricardo',
+                [ 'id' => '5', 'name' => 'ricardo' ]
             ];
             $data[] = [
-                ":id/edit/:name",
-                $start . "5/edit/ricardo" . $end,
-                [ "id" => "5", "name" => "ricardo" ]
+                ':id/edit/:name',
+                $start . '5/edit/ricardo' . $end,
+                [ 'id' => '5', 'name' => 'ricardo' ]
             ];
             $data[] = [
-                $start . ":id/:name/edit" . $end,
-                "5/ricardo/edit",
-                [ "id" => "5", "name" => "ricardo" ]
+                $start . ':id/:name/edit' . $end,
+                '5/ricardo/edit',
+                [ 'id' => '5', 'name' => 'ricardo' ]
             ];
             $data[] = [
-                ":id/:name/edit",
-                $start . "5/ricardo/edit" . $end,
-                [ "id" => "5", "name" => "ricardo" ]
+                ':id/:name/edit',
+                $start . '5/ricardo/edit' . $end,
+                [ 'id' => '5', 'name' => 'ricardo' ]
             ];
         }
 
@@ -169,14 +168,14 @@ class RouteTest extends TestCase
     public function routesNotFoundProvider(): array
     {
         return [
-            [ 'edit/:id', "edit"  ], // tamanho diferente
-            [ ':id', "edit/33"  ], // tamanho diferente
+            [ 'edit/:id', 'edit'  ], // tamanho diferente
+            [ ':id', 'edit/33'  ], // tamanho diferente
 
-            [ 'edit/:id', "edit/33/show"  ], // tamanho e padrão diferentes
-            [ ':id/edit', "33/edit/show"  ], // tamanho e padrão diferentes
+            [ 'edit/:id', 'edit/33/show'  ], // tamanho e padrão diferentes
+            [ ':id/edit', '33/edit/show'  ], // tamanho e padrão diferentes
 
-            [ 'edit/:id', "edity/33"  ], // padrão diferente
-            [ ':id/edit', "33/edity"  ], // padrão diferente
+            [ 'edit/:id', 'edity/33'  ], // padrão diferente
+            [ ':id/edit', '33/edity'  ], // padrão diferente
         ];
     }
 

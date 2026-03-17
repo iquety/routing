@@ -4,6 +4,7 @@
     "description": "Library to handle URI based routes",
     "keywords": ["framework", "routing", "router"],
     "license": "MIT",
+    "minimum-stability": "stable",
     "require": {
         "php": "^8.4",
         "psr/http-factory": "^1.0",
@@ -32,7 +33,6 @@
         "preferred-install": "dist",
         "sort-packages": true
     },
-    "minimum-stability": "dev",
     "prefer-stable": true,
     "scripts" : {
         "test": [
